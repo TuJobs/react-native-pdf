@@ -108,6 +108,11 @@ const float MIN_SCALE = 1.0f;
                        @"linkPressed|%s", _url.UTF8String]] });
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    scrollView.bounces = (scrollView.contentOffset.y > 100);
+}
+
 - (void)didSetProps:(NSArray<NSString *> *)changedProps
 {
     if (!_initialed) {
